@@ -63,63 +63,13 @@ template<typename T,typename...hello>void faltu(T arg,const hello&...rest){cerr<
  
 ll gcd ( ll a, ll b ) { return __gcd ( a, b ); }
 ll lcm ( ll a, ll b ) { return a * ( b / gcd ( a, b ) ); }
- 
- 
-int dx[] = { 0, 0, +1, -1, -1  +1, -1, +1 };
-int dy[] = { +1, -1, 0, 0, -1, +1, +1, -1 };
 
-
-int gcd(int a,int b){
-	if(b==0) return a;
-	return gcd(b,a%b);
-
-}
-
-int lcm(int a,int b){
-	  
-	  return (a*b)/gcd(a,b);
-
-}
 
 
 
  void solve(){
 
- 	  int n;
- 	  cin>>n;
-
- 	  vector<pair<int,pair<int,int>>> p;
-
  	  
- 	  int m = 0;
- 	  int k = 1;
- 	  int j = n-1;
-
- 	  for (int i = 1; i <= n/2; ++i)
- 	  {
- 	  	
-
- 	  	int lcm = (k*j)/gcd(k,j);
-
- 	  	
- 	  	int m = max(lcm,m);
-     
-
- 	  	//cout<<i<<" "<<j<<" "<<lcm<<" "<<endl;
-          p.pb({lcm,{k,j}});
-
-       	
-
- 	  	k++;
- 	  	j--;
- 	  
-
-
- 	  }
- 	  sort(all(p));
- 	  dbg(p);
- 	  cout<<p[0].second.first<<" "<<p[0].second.second<<endl;
-
  	  
  }
 

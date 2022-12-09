@@ -101,21 +101,24 @@ ll lcm ( ll a, ll b ) { return a * ( b / gcd ( a, b ) ); }
  }
 
   
-
-
-
-int32_t main(){
-	
-	fastIO();
+void solve_with_test_case(){
 
 	int t;
 	cin>>t;
 
 	while(t--){
 		solve();
-		
 	}
+}
+
+int32_t main(){
 	
-	
+	fastIO();
+
+	solve_with_test_case();
+	//solve();
 	
 } 
+
+
+

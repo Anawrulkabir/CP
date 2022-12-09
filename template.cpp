@@ -66,6 +66,33 @@ ll lcm ( ll a, ll b ) { return a * ( b / gcd ( a, b ) ); }
 
 
 
+//erase function   s.erase(remove(s.begin(),s.end(),'a'),s.end());
+//check char       isupper(char) islower(c)  isspace(c) 
+//convert char     char = toupper(char)   c = tolower(c)
+//avoid string space problem     cin.ignore()
+
+// SET             PRINT UNIQUE ELEMENT IN SORTED ORDER  // insert()
+// SET  - sort the unique element && only return the unique element (while erase the repeated element)
+// SET (PAIR) -  it return unique elements of the pair
+
+
+// STACK           LIFO  - Last In First Out             // push()
+// we can not iterate stack without pop the top element
+// print every element 
+//while( ! st.empty() ){cout<< st.top() <<endl;st.pop();}
+
+
+// QUEWE           FIFO  - First In First Out            // push()
+// while( ! q.empty() ){cout<< q.front() <<" ";q.pop(); }
+
+
+// vector < pair < key , value > > v ;
+// PAIR - it returns every element after sorting according to key  (and then value if repeated found)
+//        *** return every element ***
+
+
+
+
 
  void solve(){
 

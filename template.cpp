@@ -64,6 +64,44 @@ template<typename T,typename...hello>void faltu(T arg,const hello&...rest){cerr<
 ll gcd ( ll a, ll b ) { return __gcd ( a, b ); }
 ll lcm ( ll a, ll b ) { return a * ( b / gcd ( a, b ) ); }
 
+vector<bool> vis(mx + 1, 0);
+vector<int> prefix(mx + 5, 0);
+
+bool is_afraid(int n) {
+  string num = to_string(n);
+  if (num.find('0') != num.npos)
+    return false;
+  int x = 1;
+  for (int i = 1; i < num.size(); i++) {
+    x *= 10;
+    if (vis[n % x] != true) {
+      return false;
+    }
+  }
+  return true;
+}
+
+
+void seive() {
+  for (int i = 2; i <= mx; i++) {
+    vis[i] = true;
+  }
+  for (int i = 2; i * i <= mx; i++) {
+    if (vis[i] == true) {
+      for (int j = i * i; j <= mx; j += i) {
+        vis[j] = false;
+      }
+    }
+  }
+  for (int i = 1; i < vis.size(); i++) {
+    if (vis[i] == true && is_afraid(i)) {
+      prefix[i + 1] = prefix[i] + 1;
+    } else {
+      prefix[i + 1] = prefix[i];
+    }
+  }
+}
+
 
 
 //erase function   s.erase(remove(s.begin(),s.end(),'a'),s.end());

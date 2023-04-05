@@ -72,6 +72,11 @@ int dy[] = { +1, -1, 0, 0, -1, +1, +1, -1 };
    
     string s ;
     cin>>s;
+	 
+	 // suppose a string s = abcde 
+	 // next permutation function will not include the given string which is a permutation (abcde)
+	 // is starts from the next permutation which exists in alphabetic order 
+	 
     
     while (next_permutation(s.begin() , s.end())){
     	cout<<s<<endl;
@@ -85,9 +90,14 @@ int dy[] = { +1, -1, 0, 0, -1, +1, +1, -1 };
    
     string s ;
     cin>>s;
+	  
+	  
     sort(all(s));
+	  // for that we sort the string 
     set<string> st;
     st.insert(s);
+	  
+	  // and also include the first string so that we get the initial string 
     
     while (next_permutation(s.begin() , s.end())){
     	st.insert(s);
